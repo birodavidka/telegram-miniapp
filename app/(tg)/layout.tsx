@@ -1,3 +1,5 @@
+import AppDock from "@/components/AppDock";
+import AppNavbar from "@/components/tgAppNavbar";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -7,14 +9,10 @@ type Props = {};
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen flex items-center">
-      <div className="absolute top-5 left-5">
-        <Link href="/" className={buttonVariants({ variant: "secondary" })}>
-          <ArrowLeft className="size-4" />
-          Go back
-        </Link>
-      </div>
+    <div className="w-full min-h-screen flex flex-col items-center">
+      <AppNavbar />
       <div className="w-full max-w-md mx-auto">{children}</div>
+      <AppDock />
     </div>
   );
 };

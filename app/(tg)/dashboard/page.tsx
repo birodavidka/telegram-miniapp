@@ -1,17 +1,14 @@
+import SportSelector from "@/components/SportSelector";
 import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
-import BenefitsSection from "@/components/web/Benefits";
-import DesignCtaMarquee from "@/components/web/CTA";
-import Features from "@/components/web/Features";
-import FooterComponent from "@/components/web/Footer";
-import HeroComponent from "@/components/web/Hero";
-import Navbar from "@/components/web/Navbar";
-import PricingComponent from "@/components/web/Pricing";
 import { cn } from "@/lib/utils";
+import React from "react";
 
-export default function Home() {
+type Props = {};
+
+const AppDashboadPage = (props: Props) => {
   return (
     <main className="relative bg-background">
-      {/* BACKGROUND LAYER (nem zavar sticky-nek) */}
+      {/* BACKGROUND LAYER */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <AnimatedGridPattern
           numSquares={30}
@@ -25,17 +22,11 @@ export default function Home() {
           )}
         />
       </div>
-
-      {/* CONTENT LAYER */}
       <div className="relative z-10">
-        <Navbar />
-        <HeroComponent />
-        <BenefitsSection />
-        <Features />
-        <PricingComponent />
-        <DesignCtaMarquee />
-        <FooterComponent />
+        <SportSelector />
       </div>
     </main>
   );
-}
+};
+
+export default AppDashboadPage;
